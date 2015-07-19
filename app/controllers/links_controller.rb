@@ -45,19 +45,4 @@ class LinksController < ApplicationController
   def link_params
     params.require(:link).permit(:title, :url)
   end
-
-  def add_comment
-    @link = Link.find(params[:id])
-    comment = Comment.new(comment_params)
-
-    unless comment.save
-      flash[:errors] = comment.errors.full_messages
-    end
-    
-    redirect_to link_url(@link)
-  end
-
-  def comment_params
-    params.require(:comment).permit(:body)
-  end
 end
