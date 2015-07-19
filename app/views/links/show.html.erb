@@ -1,0 +1,6 @@
+<h1>Link title: <%= @link.title %></h1>
+<h2>URL: <%= @link.url %></h2>
+<%= link_to 'Edit Link', edit_link_url(@link) %>
+<%= link_to 'Links', links_url %>
+<%= render partial: 'comment', collection: @comments, as: :comment %>
+<%= render partial: 'new_comment', locals: { link: @link } %>

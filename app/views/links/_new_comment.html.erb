@@ -1,0 +1,7 @@
+<form action=<%= link_comments_url(link.id) %> method="post">
+  <%= auth_token %>
+  <label for="body">Add Comment</label>
+  <textarea name=comment[body] id="body"></textarea>
+  <br>
+  <input type="submit" value="Add Comment">
+</form>
